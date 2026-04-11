@@ -1,0 +1,323 @@
+:root {
+    --card-red: #9e0303;
+    --card-yellow: #fdd835;
+    --card-width: 850px;
+    --card-height: 480px;
+}
+
+body {
+    font-family: 'Outfit', 'Mukta Malar', sans-serif;
+    background-color: #e9ecef;
+}
+
+/* Card Container */
+.id-card-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.id-card {
+    width: var(--card-width);
+    height: var(--card-height);
+    background: linear-gradient(135deg, #ffffff 0%, #f1f3f5 100%);
+    background-size: cover;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    position: relative;
+    border: 1px solid #ddd;
+}
+
+/* Header */
+.card-header-v {
+    background: var(--card-red);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid var(--card-yellow);
+}
+
+.card-header-v h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.card-header-v p {
+    color: var(--card-yellow);
+    margin: 5px 0 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Body Layout */
+.card-body-v {
+    padding: 30px;
+    display: flex;
+    height: calc(100% - 140px);
+    position: relative;
+}
+
+/* Watermark Map */
+.map-watermark {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    opacity: 0.12;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Left Column (Photo & QR) */
+.left-col {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.member-photo {
+    width: 120px;
+    height: 140px;
+    border: 1.5px solid var(--card-red);
+    background: #fff;
+    padding: 3px;
+    margin-bottom: 20px;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.qr-code {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    background: #fff;
+}
+
+/* Center Column (Details) */
+.center-col {
+    flex: 1;
+    padding-left: 40px;
+    z-index: 2;
+}
+
+.badge-label {
+    background: #fff;
+    border: 1.5px solid #2c3e50;
+    color: #2c3e50;
+    padding: 2px 25px;
+    border-radius: 50px;
+    display: inline-block;
+    font-weight: 800;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.info-table {
+    width: 100%;
+}
+
+.info-row {
+    display: flex;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.info-row .label {
+    width: 140px;
+    color: var(--card-red);
+    font-weight: 800;
+}
+
+.info-row .colon {
+    width: 20px;
+    color: #333;
+}
+
+.info-row .val {
+    flex: 1;
+    color: #000;
+    font-weight: 600;
+}
+
+/* Right Column (Leader) */
+.right-col {
+    width: 300px;
+    position: relative;
+    z-index: 2;
+}
+
+.leader-portrait {
+    position: absolute;
+    bottom: -30px;
+    right: -20px;
+    width: 320px;
+    filter: drop-shadow(-10px 0 20px rgba(0,0,0,0.1));
+}
+
+.signature-box {
+    position: absolute;
+    bottom: 0px;
+    left: 20px;
+    text-align: center;
+}
+
+.signature-box img {
+    height: 40px;
+    filter: brightness(0.2);
+}
+
+.signature-box p {
+    margin: 5px 0 0;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--card-red);
+}
+
+/* Footer Strip */
+.card-footer-v {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.social-strip {
+    font-size: 0.65rem;
+    color: #555;
+    flex: 1;
+}
+
+.bottom-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(to right, #008000 0%, #008000 33%, #FFD700 33%, #FFD700 66%, #FF0000 66%, #FF0000 100%);
+}
+
+/* Form Responsiveness */
+@media (max-width: 991px) {
+    .id-card-container {
+        transform: scale(0.6);
+        transform-origin: top center;
+        height: 300px;
+    }
+}
+
+/* TVK Style Form Styling */
+.form-card-v {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.form-banner-v {
+    padding: 20px;
+    border-bottom: 2px solid #eee;
+    text-align: center;
+}
+
+.form-banner-v h4 {
+    color: var(--card-red);
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.form-banner-v p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+}
+
+.tvk-form label {
+    color: var(--card-red);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.tvk-form .form-control, 
+.tvk-form .form-select {
+    border: 1px solid #ced4da;
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.tvk-form .form-control:focus, 
+.tvk-form .form-select:focus {
+    border-color: var(--card-red);
+    box-shadow: 0 0 0 0.2rem rgba(158, 3, 3, 0.1);
+    outline: none;
+}
+
+/* Photo Upload Box */
+.photo-drop-zone {
+    border: 2px dashed #ddd;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    background: #fdfdfd;
+}
+
+.photo-drop-zone:hover {
+    border-color: var(--card-red);
+    background: #fff8f8;
+}
+
+.photo-drop-zone i {
+    font-size: 2.5rem;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.upload-text {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.upload-hint {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.btn-register {
+    background-color: var(--card-red);
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    width: 100%;
+    border: none;
+    margin-top: 20px;
+}
+
+.btn-register:hover {
+    background-color: #7a0202;
+    color: #fff;
+}

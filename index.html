@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>பாமக பவானி தொகுதி | பாட்டாளி மக்கள் கட்சி</title>
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="பாமக பவானி தொகுதி அதிகாரப்பூர்வ பக்கம். பவானி மக்களுக்கு சேவைகள், வளர்ச்சி மற்றும் இணைப்பை வழங்குதல்.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@200;400;700&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#main-nav" data-bs-offset="100">
+
+    <!-- Loading Spinner -->
+    <div id="loader" class="loader-wrapper">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="main-nav" class="navbar navbar-expand-lg fixed-top shadow-sm py-2">
+        <div class="container align-items-center">
+            <a class="navbar-brand d-flex align-items-center p-0" href="#home">
+                <div class="logo-box pmk-logo-ring" style="flex-shrink: 0; background: #fff;">
+                    <img src="./Images/pmk logo 2.png" alt="PMK Logo" style="width: 100%; height: 100%; object-fit: contain; padding: 4px;">
+                </div>
+                <img src="./Images/PMK Logo.png" alt="PMK Bhavani" class="pmk-text-logo ms-2 ms-lg-3">
+            </a>
+            <button class="navbar-toggler border-0 shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="nav-icon-toggle"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">முகப்பு</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#leader">தலைவர்</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">எங்களைப் பற்றி</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">புகைப்படங்கள்</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#thoguthi">தொகுதி</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">கோரிக்கைகள்</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a href="membership.html" class="btn btn-warning rounded-pill px-4 py-2 fw-bold shadow">இப்போதே இணையுங்கள்</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Carousel -->
+    <header id="home" class="hero-carousel-section">
+        <div id="heroCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel">
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- Carousel Items -->
+            <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                    <div class="carousel-img h-100" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('Images/5.jpg');"></div>
+                    <div class="carousel-caption d-flex flex-column justify-content-center h-100 text-center text-lg-start">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8" data-aos="fade-up">
+                                    <div class="hero-card border-0 p-0 bg-transparent text-center text-lg-start">
+                                        <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill fw-bold floating-badge">முன்னேற்றம் மற்றும் வளர்ச்சி</span>
+                                        <h1 class="display-2 fw-bold mb-4 text-white">பாமக பவானி <br><span class="text-warning">தொகுதி</span></h1>
+                                        <p class="lead mb-5 opacity-75 fs-4">பவானி தொகுதியின் வளர்ச்சிக்கும், மக்களின் முன்னேற்றத்திற்கும் அர்ப்பணிக்கப்பட்டது. நீங்களும் எங்களோடு இணையுங்கள்.</p>
+                                        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                                            <a href="#about" class="btn btn-warning btn-lg rounded-pill px-5 text-dark fw-bold shadow-lg">மேலும் அறிய</a>
+                                            <a href="membership.html" class="btn btn-outline-light btn-lg rounded-pill px-5 shadow-sm">இப்போதே இணையுங்கள்</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item h-100">
+                    <div class="carousel-img h-100" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('./Images/6.jpg');"></div>
+                    <div class="carousel-caption d-flex flex-column justify-content-center h-100 text-center text-lg-start">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8" data-aos="fade-up">
+                                    <div class="hero-card border-0 p-0 bg-transparent text-center text-lg-start">
+                                        <span class="badge bg-success text-white mb-3 px-3 py-2 rounded-pill fw-bold floating-badge">மக்களின் குரல்</span>
+                                        <h2 class="display-2 fw-bold mb-4 text-white">மக்களுக்காக <br><span class="text-warning">மக்கள் பணி</span></h2>
+                                        <p class="lead mb-5 opacity-75 fs-4">சாதாரண குடிமகனுக்கான சேவை மற்றும் அர்ப்பணிப்பே எங்கள் தலைமையின் அடையாளம்.</p>
+                                        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                                            <a href="#leader" class="btn btn-warning btn-lg rounded-pill px-5 text-dark fw-bold shadow-lg">தலைவரின் விவரத்தைக் காண்க</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item h-100">
+                    <div class="carousel-img h-100" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('./Images/10.jpg');"></div>
+                    <div class="carousel-caption d-flex flex-column justify-content-center h-100 text-center text-lg-start">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8" data-aos="fade-up">
+                                    <div class="hero-card border-0 p-0 bg-transparent text-center text-lg-start">
+                                        <span class="badge bg-light text-dark mb-3 px-3 py-2 rounded-pill fw-bold floating-badge">விவசாயத்திற்கு முன்னுரிமை</span>
+                                        <h2 class="display-2 fw-bold mb-4 text-white">பசுமை <br><span class="text-warning">பவானி</span></h2>
+                                        <p class="lead mb-5 opacity-75 fs-4">நமது விவசாயிகளுக்கும் விவசாய பாரம்பரியத்திற்கும் நிலையான வளர்ச்சியை உறுதி செய்தல்.</p>
+                                        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                                            <a href="#thoguthi" class="btn btn-warning btn-lg rounded-pill px-5 text-dark fw-bold shadow-lg">தொகுதி</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon p-3 bg-dark bg-opacity-25 rounded-circle shadow"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon p-3 bg-dark bg-opacity-25 rounded-circle shadow"></span>
+            </button>
+        </div>
+        
+            <!-- Scroll Down Indicator -->
+            <a href="#leader" class="scroll-down d-none d-lg-block">
+                <span class="mouse">
+                    <span class="wheel"></span>
+                </span>
+                <span class="small fw-bold text-uppercase" style="letter-spacing: 2px;">கீழே செல்லவும்</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Leader Section -->
+    <section id="leader" class="section-padding bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="leader-image-wrapper p-3 bg-white shadow-lg rounded-4">
+                        <!-- User should replace with actual images. Using placeholders for demonstration. -->
+                        <img src="./Images/pmk head.png" alt="Leader" class="img-fluid rounded-4 hvr-grow" style="border: 4px solid #E02828; box-shadow: 0 0 0 4px #ffff01, 0 0 0 10px #00AAEF; margin: 15px;">
+                        <div class="experience-badge">
+                            <span class="count">25+</span>
+                            <span class="text">ஆண்டுகள் சேவை</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 ps-lg-5" data-aos="fade-left">
+                    <h6 class="text-primary text-uppercase fw-bold mb-3">நமது தலைவர்</h6>
+                    <h2 class="display-5 fw-bold mb-4">பொ.வை.ஆறுமுகம்</h2>
+                    <p class="lead text-muted mb-4">
+                        பவானி மக்களுக்காக ஆர்வம், நேர்மை மற்றும் எதிர்கால நோக்கத்துடன் சேவை செய்வதில் அர்ப்பணிப்பு.
+                    </p>
+                    <div class="row g-4 mb-5">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-box me-3"><i class="fas fa-check-circle"></i></div>
+                                <h6 class="mb-0 fw-bold">நேர்மையான தலைமை</h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-box me-3"><i class="fas fa-check-circle"></i></div>
+                                <h6 class="mb-0 fw-bold">மக்களுக்கே முன்னுரிமை</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <button class="btn btn-primary rounded-pill px-4 py-2">முழு விவரத்தை வாசிக்க</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding bg-light">
+        <div class="container">
+            <div class="row mb-5 text-center" data-aos="fade-up">
+                <div class="col-12">
+                    <h6 class="text-primary text-uppercase fw-bold mb-3">புகைப்பட தொகுப்பு</h6>
+                    <h2 class="display-5 fw-bold mb-4">தொகுதி நிகழ்வுகள்</h2>
+                    <div class="underline mx-auto"></div>
+                </div>
+            </div>
+            <div class="row g-4 gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-item overflow-hidden rounded-4 shadow-sm">
+                        <img src="./Images/5.jpg" alt="Gallery Image 1" class="img-fluid hvr-zoom">
+                    </div>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gallery-item overflow-hidden rounded-4 shadow-sm">
+                        <img src="./Images/6.jpg" alt="Gallery Image 2" class="img-fluid hvr-zoom">
+                        <!-- <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                            <span class="text-white fw-bold">கல்வி உதவி</span>
+                        </div> -->
+                    </div>
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="gallery-item overflow-hidden rounded-4 shadow-sm">
+                        <img src="./Images/1.jpg" alt="Gallery Image 3" class="img-fluid hvr-zoom">
+                    </div>
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-item overflow-hidden rounded-4 shadow-sm">
+                        <img src="./Images/8.jpg" alt="Gallery Image 4" class="img-fluid hvr-zoom">
+                    </div>
+                </div>
+                <!-- Gallery Item 5 -->
+                <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gallery-item overflow-hidden rounded-4 shadow-sm">
+                        <img src="./Images/2.jpg" alt="Gallery Image 5" class="img-fluid hvr-zoom">
+                    </div>
+                </div>
+                <!-- Gallery Item 6 -->
+                <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="gallery-item overflow-hidden rounded-4 shadow-sm">
+                        <img src="./Images/10.jpg" alt="Gallery Image 6" class="img-fluid hvr-zoom">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container text-center" data-aos="fade-up">
+            <div class="max-width-800 mx-auto">
+                <h6 class="text-primary text-uppercase fw-bold mb-3">எங்களைப் பற்றி</h6>
+                <h2 class="display-5 fw-bold mb-4">எமது பணி, எமது இலக்கு</h2>
+                <div class="underline mx-auto mb-5"></div>
+                <p class="text-muted fs-5 mb-5">
+                    பாமக பவானி அதிகாரப்பூர்வ பக்கத்திற்கு உங்களை வரவேற்கிறோம். சமூக நீதி, விவசாய வளர்ச்சி மற்றும் உள்ளூர் மேம்பாட்டிற்கு நாங்கள் அர்ப்பணித்துள்ளோம். 
+                    பவானி தொகுதியின் வளர்ச்சி மற்றும் பொதுமக்களின் கோரிக்கைகளை நிவர்த்தி செய்வதே எங்களது பிரதான நோக்கம்.
+                </p>
+                <div class="row g-4">
+                    <div class="col-md-6 text-center text-md-start">
+                        <div class="card p-4 border-0 shadow-sm rounded-4 h-100 hvr-float">
+                            <div class="card-icon bg-success-soft text-success mb-3 mx-auto mx-md-0">
+                                <i class="fas fa-eye fa-lg"></i>
+                            </div>
+                            <h4 class="fw-bold">நமது நோக்கம்</h4>
+                            <p class="text-muted">கல்வி, சிறந்த சுகாதார சேவைகள் மற்றும் மேம்பட்ட உள்கட்டமைப்பு மூலம் பவானியின் ஒவ்வொரு குடிமகனையும் மேம்படுத்துதல்.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center text-md-start">
+                        <div class="card p-4 border-0 shadow-sm rounded-4 h-100 hvr-float">
+                            <div class="card-icon bg-warning-soft text-warning mb-3 mx-auto mx-md-0">
+                                <i class="fas fa-bullseye fa-lg"></i>
+                            </div>
+                            <h4 class="fw-bold">நமது பார்வை</h4>
+                            <p class="text-muted">ஒவ்வொரு வீட்டிற்கும் முன்னேற்றம் சென்றடையும் ஒரு வளமான, ஒருங்கிணைந்த மற்றும் நிலையான பவானி.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="thoguthi" class="section-padding bg-dark text-white">
+        <div class="container">
+            <div class="row mb-5 text-center" data-aos="fade-up">
+                <div class="col-12">
+                    <span class="text-warning text-uppercase fw-bold mb-2 d-block">பவானி தொகுதி</span>
+                    <h2 class="display-5 fw-bold mb-3">தொகுதி மற்றும் சேவைகள்</h2>
+                    <p class="text-white-50 max-width-600 mx-auto">நமது சமூகத்திற்கான அர்ப்பணிப்பான சேவைகள் மற்றும் வெளிப்படையான வளர்ச்சியினை வழங்குதல்.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Area Cover -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card p-5 rounded-4 h-100">
+                        <div class="icon-circle"><i class="fas fa-map-marked-alt"></i></div>
+                        <h4 class="fw-bold mb-4">உள்ளடக்கிய பகுதிகள்</h4>
+                        <ul class="list-unstyled text-muted mb-0">
+                            <li>பவானி நகரம்</li>
+                            <li>அம்மாபேட்டை</li>
+                            <li>ஆப்பக்கூடல்</li>
+                            <li>அந்தியூர் இணைப்புகள்</li>
+                            <li>சித்தோடு பகுதிகள்</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Services -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card p-5 rounded-4 h-100">
+                        <div class="icon-circle"><i class="fas fa-hands-helping"></i></div>
+                        <h4 class="fw-bold mb-4">பொது சேவைகள்</h4>
+                        <ul class="list-unstyled text-muted mb-0">
+                            <li>குறை தீர்த்தல்</li>
+                            <li>சட்ட உதவி மையம்</li>
+                            <li>இளைஞர் வேலைவாய்ப்பு பிரிவு</li>
+                            <li>நலத்திட்டங்கள் இணைப்பு</li>
+                            <li>கல்வி ஆதரவு</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Agriculture -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card p-5 rounded-4 h-100">
+                        <div class="icon-circle"><i class="fas fa-seedling"></i></div>
+                        <h4 class="fw-bold mb-4">விவசாயம்</h4>
+                        <ul class="list-unstyled text-muted mb-0">
+                            <li>விவசாயி கல்வி மையம்</li>
+                            <li>பாசன ஆதரவு</li>
+                            <li>மானியங்கள் இணைப்பு</li>
+                            <li>நவீன சந்தை அணுகல்</li>
+                            <li>மண் பரிசோதனை சேவைகள்</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding bg-light">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7">
+                    <span class="text-primary text-uppercase fw-bold mb-2 d-block">தொடர்புக்கு</span>
+                    <h2 class="display-5 fw-bold mb-3">உங்கள் கோரிக்கைகள்</h2>
+                    <p class="text-muted">தொகுதி தொடர்பான கோரிக்கைகள் மற்றும் ஆலோசனைகளை இங்கே பகிரலாம். உங்கள் கருத்துக்கள் எமது வளர்ச்சிக்கு உதவும்.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10 shadow-lg p-0 overflow-hidden rounded-4 bg-white" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="row g-0">
+                        <div class="col-md-5 bg-primary text-white p-4 p-md-5 d-flex flex-column justify-content-center position-relative overflow-hidden">
+                            <!-- Subtle decorative circle -->
+                            <div class="bg-circle" style="position:absolute; top:-50px; right:-50px; width:150px; height:150px; background:rgba(255,255,255,0.1); border-radius:50%;"></div>
+                            
+                            <h3 class="fw-bold mb-4 position-relative">தொடர்பு கொள்ளுங்கள்</h3>
+                            <p class="opacity-75 mb-5 position-relative">பவானி மக்களின் கருத்துக்களைப் பெறவும், சேவை செய்யவும் நாங்கள் இங்கே இருக்கிறோம். உங்கள் குறைகள், ஆலோசனைகளை எங்களிடம் தெரிவிக்கலாம்.</p>
+                            
+                            <div class="contact-info position-relative">
+                                <div class="d-flex mb-4 hvr-translate-x">
+                                    <div class="contact-icon-sm me-3"><i class="fas fa-phone-alt"></i></div>
+                                    <div>
+                                        <small class="d-block opacity-50">அழைக்க</small>
+                                        <div class="fw-bold">+91 8877889595</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-4 hvr-translate-x">
+                                    <div class="contact-icon-sm me-3"><i class="fas fa-envelope"></i></div>
+                                    <div>
+                                        <small class="d-block opacity-50">மின்னஞ்சல்</small>
+                                        <div class="fw-bold">pmkerode@gmail.com</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex hvr-translate-x">
+                                    <div class="contact-icon-sm me-3"><i class="fas fa-map-marker-alt"></i></div>
+                                    <div>
+                                        <small class="d-block opacity-50">இடம்</small>
+                                        <div class="fw-bold">பவானி, ஈரோடு மாவட்டம், தமிழ்நாடு.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 p-4 p-md-5">
+                            <form id="contactForm" novalidate>
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-bold small text-uppercase">பெயர்</label>
+                                        <input type="text" class="form-control bg-light border-0 py-3" id="userName" placeholder="உங்கள் பெயர்" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-bold small text-uppercase">அலைபேசி</label>
+                                        <input type="tel" class="form-control bg-light border-0 py-3" id="userPhone" placeholder="10 இலக்க எண்" required pattern="[0-9]{10}">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-bold small text-uppercase">ஊர் / பகுதி</label>
+                                        <input type="text" class="form-control bg-light border-0 py-3" id="userArea" placeholder="உங்கள் பகுதி அல்லது ஊரின் பெயர்" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-bold small text-uppercase">வார்டு எண்</label>
+                                        <input type="number" class="form-control bg-light border-0 py-3" id="userWard" placeholder="வார்டு எண்" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label fw-bold small text-uppercase">தலைப்பு</label>
+                                        <select id="userSubject" class="form-select bg-light border-0 py-3">
+                                            <option selected>பொதுவான கேள்வி</option>
+                                            <option>விவசாய பிரச்சனை</option>
+                                            <option>உள்கட்டமைப்பு கோரிக்கை</option>
+                                            <option>கல்வி கோரிக்கை</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label fw-bold small text-uppercase">மனு</label>
+                                        <textarea class="form-control bg-light border-0 py-3" id="userMessage" rows="4" placeholder="நாங்கள் உங்களுக்கு எவ்வாறு உதவ முடியும்?" required></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary w-100 py-3 rounded-3 fw-bold shadow-sm hvr-grow">
+                                            செய்தி அனுப்பு <i class="fas fa-paper-plane ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div id="successMessage" class="alert alert-success mt-4 d-none">
+                                <i class="fas fa-check-circle me-2"></i> நன்றி! உங்கள் செய்தி வெற்றிகரமாக அனுப்பப்பட்டது.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div style="height: 6px; background: linear-gradient(to right, #00AAEF 33.3%, #ffff02 33.3% 66.6%, #E02828 66.6%); width: 100%;"></div>
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row mb-5 text-center text-md-start">
+                <div class="col-md-5 mb-4 mb-md-0" data-aos="fade-up">
+                    <img src="./Images/PMK Logo.png" alt="PMK Bhavani" class="footer-logo-img mb-3">
+                    <p class="opacity-75 pe-0 pe-md-4">பவானி மக்களின் முன்னேற்றத்திற்கும், விவசாயிகளின் நலனுக்கும் எங்கள் அரசியல் பயணம் என்றும் அர்ப்பணிக்கப்பட்டுள்ளது.</p>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                    <h5 class="fw-bold text-warning mb-3">பக்கங்கள்</h5>
+                    <ul class="list-unstyled opacity-75">
+                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none hvr-translate-x d-inline-block"><i class="fas fa-angle-right me-2 text-warning"></i>முகப்பு</a></li>
+                        <li class="mb-2"><a href="#leader" class="text-white text-decoration-none hvr-translate-x d-inline-block"><i class="fas fa-angle-right me-2 text-warning"></i>தலைவர்</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none hvr-translate-x d-inline-block"><i class="fas fa-angle-right me-2 text-warning"></i>எங்களைப் பற்றி</a></li>
+                        <li class="mb-2"><a href="#gallery" class="text-white text-decoration-none hvr-translate-x d-inline-block"><i class="fas fa-angle-right me-2 text-warning"></i>புகைப்படங்கள்</a></li>
+                        <li class="mb-2"><a href="#thoguthi" class="text-white text-decoration-none hvr-translate-x d-inline-block"><i class="fas fa-angle-right me-2 text-warning"></i>தொகுதி</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none hvr-translate-x d-inline-block"><i class="fas fa-angle-right me-2 text-warning"></i>தொடர்புக்கு</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-center text-md-end" data-aos="fade-up" data-aos-delay="200">
+                    <h5 class="fw-bold text-warning mb-4">எங்களை தொடர</h5>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/arumugam.pv.5/" class="btn btn-outline-light btn-lg rounded-circle me-2 hvr-float"><i class="fab fa-facebook-f"></i></a>
+                        <!-- <a href="#" class="btn btn-outline-light btn-lg rounded-circle me-2 hvr-float"><i class="fab fa-twitter"></i></a> -->
+                        <a href="https://www.instagram.com/_erode_arumugam_?igsh=Y3V0enNrcG9sYW8=" class="btn btn-outline-light btn-lg rounded-circle me-2 hvr-float"><i class="fab fa-instagram"></i></a>
+                        <!-- <a href="#" class="btn btn-outline-light btn-lg rounded-circle hvr-float"><i class="fab fa-whatsapp"></i></a> -->
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0 opacity-50 small">&copy; 2026 PMK Bhavani. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 opacity-50 small">Designed & Developed By <a href="https://cloudhawk.in/" class="text-warning text-decoration-none fw-bold">CloudHawk</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button id="scrollTop" class="btn btn-warning rounded-circle shadow-lg d-none">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    </script>
+    <!-- JS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
