@@ -113,56 +113,86 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 6. Form Validation & Handling
     const contactForm = document.getElementById('contactForm');
-    const successMsg = document.getElementById('successMessage');
+const successMsg = document.getElementById('successMessage');
 
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        if (!contactForm.checkValidity()) {
-            e.stopPropagation();
-            contactForm.classList.add('was-validated');
-            return;
-        }
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+        e.stopPropagation();
+        contactForm.classList.add('was-validated');
+        return;
+    }
+
+    // 🔥 GET VALUES (YOU MISSED THIS)
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const area = document.getElementById('area').value;
+    const ward = document.getElementById('ward').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
 
         // Save to LocalStorage (Intranet Connection)
-        const queries = JSON.parse(localStorage.getItem('pmk_queries') || '[]');
-        queries.push({
-            name: name,
-            phone: phone,
-            area: area,
-            ward: ward,
-            subject: subject,
-            message: message,
-            timestamp: new Date().toLocaleString('ta-IN')
-        });
-        localStorage.setItem('pmk_queries', JSON.stringify(queries));
+         const queries = JSON.parse(localStorage.getItem('pmk_queries') || '[]');
 
-        // Construct WhatsApp Message
-        const wpNumber = "918877889595"; // Replaced with placeholder match from sidebar
-        const wpMessage = `*New Query from PMK Bhavani Website*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Area:* ${area}%0A*Ward No:* ${ward}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
-        const wpLink = `https://wa.me/${wpNumber}?text=${wpMessage}`;
+    queries.push({
+        name,
+        phone,
+        area,
+        ward,
+        subject,
+        message,
+        timestamp: new Date().toLocaleString('ta-IN')
+    });
+
+    localStorage.setItem('pmk_queries', JSON.stringify(queries));
+
+    // =========================
+    // ✅ WHATSAPP MESSAGE
+    // =========================
+    const wpNumber = "918877889595";
+
+    const wpMessage =
+        `*PMK BHAVANI NEW QUERY*%0A%0A` +
+        `*Name:* ${name}%0A` +
+        `*Phone:* ${phone}%0A` +
+        `*Area:* ${area}%0A` +
+        `*Ward:* ${ward}%0A` +
+        `*Subject:* ${subject}%0A` +
+        `*Message:* ${message}`;
+
+    const wpLink = `https://wa.me/${wpNumber}?text=${wpMessage}`;
+
 
         // UI Feedback
-        const btn = contactForm.querySelector('button');
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Connecting WhatsApp...';
-        btn.disabled = true;
+        // const btn = contactForm.querySelector('button');
+        // const originalText = btn.innerHTML;
+        // btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Connecting WhatsApp...';
+        // btn.disabled = true;
+
+         const btn = contactForm.querySelector('button');
+    const originalText = btn.innerHTML;
+
+    btn.innerHTML = "Sending...";
+    btn.disabled = true;
 
         // Redirect to WhatsApp after a small delay
         setTimeout(() => {
-            window.open(wpLink, '_blank');
-            
-            btn.innerHTML = originalText;
-            btn.disabled = false;
-            successMsg.classList.remove('d-none');
-            contactForm.reset();
-            contactForm.classList.remove('was-validated');
+        // WhatsApp open
+        window.open(wpLink, '_blank');
 
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                successMsg.classList.add('d-none');
-            }, 5000);
-        }, 1500);
+        // Success UI
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+
+        successMsg.classList.remove('d-none');
+        contactForm.reset();
+        contactForm.classList.remove('was-validated');
+
+        setTimeout(() => {
+            successMsg.classList.add('d-none');
+        }, 4000);
+        }, 1000);
     });
 
     // Active link highlighting on scroll (using logic since Bootstrap spy can be finicky)

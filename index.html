@@ -84,10 +84,35 @@
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
             </div>
 
             <!-- Carousel Items -->
             <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                    <div class="carousel-img h-100" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('./Images/head1 (1).png');"></div>
+                    <div class="carousel-caption d-flex flex-column justify-content-center h-100 text-center text-lg-start">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-10 col-xl-8" data-aos="zoom-out-up">
+                                    <div class="hero-card text-center text-lg-start">
+                                        <div class="d-inline-flex align-items-center bg-white bg-opacity-10 backdrop-blur rounded-pill px-3 py-2 mb-4 border border-white border-opacity-25 shadow-sm">
+                                            <span class="badge bg-warning text-dark me-2 rounded-circle px-2 py-2"><i class="fas fa-bolt"></i></span>
+                                            <span class="text-white small fw-bold text-uppercase" style="letter-spacing: 1px;">முன்னேற்றம் மற்றும் வளர்ச்சி</span>
+                                        </div>
+                                        <h1 class="display-1 fw-extrabold mb-4 text-white lh-1">பாமக <span class="text-warning">பவானி</span> <br><span style="background: linear-gradient(to right, #FFD700, #FF0000); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">தொகுதி</span></h1>
+                                        <p class="lead mb-5 text-white opacity-75 fs-4 fw-light">மருத்துவர் ஐயா. </p>
+                                        <!-- <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                                            <a href="#about" class="btn btn-warning btn-lg rounded-pill px-5 text-dark fw-bold shadow-lg border-2 border-warning hvr-grow">மேலும் அறிய</a>
+                                            <a href="membership.html" class="btn btn-outline-light btn-lg rounded-pill px-5 shadow-sm border-2 hvr-grow">இப்போதே இணையுங்கள்</a>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 1 -->
                 <div class="carousel-item active h-100">
                     <div class="carousel-img h-100" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('Images/5.jpg');"></div>
                     <div class="carousel-caption d-flex flex-column justify-content-center h-100 text-center text-lg-start">
@@ -462,23 +487,23 @@
                                 <div class="row g-4">
                                     <div class="col-md-6">
                                         <label class="form-label fw-bold small text-uppercase">பெயர்</label>
-                                        <input type="text" class="form-control bg-light border-0 py-3" id="userName" placeholder="உங்கள் பெயர்" required>
+                                        <input type="text" class="form-control bg-light border-0 py-3" id="name" placeholder="உங்கள் பெயர்" required>
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label fw-bold small text-uppercase">அலைபேசி</label>
-                                        <input type="tel" class="form-control bg-light border-0 py-3" id="userPhone" placeholder="10 இலக்க எண்" required pattern="[0-9]{10}">
+                                        <input type="tel" class="form-control bg-light border-0 py-3" id="phone" placeholder="10 இலக்க எண்" required pattern="[0-9]{10}">
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label fw-bold small text-uppercase">ஊர் / பகுதி</label>
-                                        <input type="text" class="form-control bg-light border-0 py-3" id="userArea" placeholder="உங்கள் பகுதி அல்லது ஊரின் பெயர்" required>
+                                        <input type="text" class="form-control bg-light border-0 py-3" id="area" placeholder="உங்கள் பகுதி அல்லது ஊரின் பெயர்" required>
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label fw-bold small text-uppercase">வார்டு எண்</label>
-                                        <input type="number" class="form-control bg-light border-0 py-3" id="userWard" placeholder="வார்டு எண்" required>
+                                        <input type="number" class="form-control bg-light border-0 py-3" id="ward" placeholder="வார்டு எண்" required>
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label fw-bold small text-uppercase">தலைப்பு</label>
-                                        <select id="userSubject" class="form-select bg-light border-0 py-3">
+                                        <select id="subject" class="form-select bg-light border-0 py-3">
                                             <option selected>பொதுவான கேள்வி</option>
                                             <option>விவசாய பிரச்சனை</option>
                                             <option>உள்கட்டமைப்பு கோரிக்கை</option>
@@ -487,7 +512,7 @@
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label fw-bold small text-uppercase">மனு</label>
-                                        <textarea class="form-control bg-light border-0 py-3" id="userMessage" rows="4" placeholder="நாங்கள் உங்களுக்கு எவ்வாறு உதவ முடியும்?" required></textarea>
+                                        <textarea class="form-control bg-light border-0 py-3" id="message" rows="4" placeholder="நாங்கள் உங்களுக்கு எவ்வாறு உதவ முடியும்?" required></textarea>
                                     </div>
                                     <div class="col-12">
                                         <button type="submit" class="btn btn-primary w-100 py-3 rounded-3 fw-bold shadow-sm hvr-grow">
