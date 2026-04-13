@@ -94,6 +94,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         inVoter.classList.remove('is-invalid');
 
+        // --- Store Data in Intranet (localStorage) as soon as created ---
+        const registeredMembers = JSON.parse(localStorage.getItem('pmk_members_data') || '[]');
+        const registeredVoterIDs = JSON.parse(localStorage.getItem('pmk_voters_list') || '[]');
+        
+        if (!registeredVoterIDs.includes(currentVoterID)) {
+            const newMember = {
+                name: inName.value.trim(),
+                phone: inPhone.value.trim(),
+                area: inArea.value.trim(),
+                ward: inArea.value.trim(),
+                voterID: currentVoterID,
+                district: inDistrict.value.trim(),
+                timestamp: new Date().toLocaleString('ta-IN')
+            };
+            
+            registeredMembers.push(newMember);
+            registeredVoterIDs.push(currentVoterID);
+            
+            localStorage.setItem('pmk_members_data', JSON.stringify(registeredMembers));
+            localStorage.setItem('pmk_voters_list', JSON.stringify(registeredVoterIDs));
+            console.log('Member stored in intranet successfully!');
+        }
+
         // Force an update right before showing
         updatePreview();
         previewModal.show();
@@ -120,16 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
             link.href = canvas.toDataURL('image/png');
             link.click();
             
-            // --- Save successfully registered Voter ID to LocalStorage ---
-            const currentVoterID = inVoter.value.trim().toUpperCase();
-            if (currentVoterID) {
-                const registeredVoters = JSON.parse(localStorage.getItem('pmk_voters_list') || '[]');
-                if (!registeredVoters.includes(currentVoterID)) {
-                    registeredVoters.push(currentVoterID);
-                    localStorage.setItem('pmk_voters_list', JSON.stringify(registeredVoters));
-                }
-            }
-
             // Restore button
             downloadBtn.innerHTML = originalBtnText;
             downloadBtn.disabled = false;

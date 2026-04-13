@@ -27,41 +27,50 @@
         </div>
     </div>
 
-    <!-- Navbar -->
-    <nav id="main-nav" class="navbar navbar-expand-lg fixed-top shadow-sm py-2">
-        <div class="container align-items-center">
-            <a class="navbar-brand d-flex align-items-center p-0" href="#home">
-                <div class="logo-box pmk-logo-ring" style="flex-shrink: 0; background: #fff;">
-                    <img src="./Images/pmk logo 2.png" alt="PMK Logo" style="width: 100%; height: 100%; object-fit: contain; padding: 4px;">
-                </div>
-                <img src="./Images/PMK Logo.png" alt="PMK Bhavani" class="pmk-text-logo ms-2 ms-lg-3">
-            </a>
-            <button class="navbar-toggler border-0 shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="nav-icon-toggle"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">முகப்பு</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#leader">தலைவர்</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">எங்களைப் பற்றி</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#gallery">புகைப்படங்கள்</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#thoguthi">தொகுதி</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">கோரிக்கைகள்</a>
-                    </li>
-                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                        <a href="membership.html" class="btn btn-warning rounded-pill px-4 py-2 fw-bold shadow">இப்போதே இணையுங்கள்</a>
-                    </li>
+    <!-- Header / Navbar Section -->
+    <nav class="political-nav fixed-top shadow-sm">
+        <div class="container nav-belt">
+            <!-- 1. LEFT: PMK Logo 2 (Ring) -->
+            <div class="nav-section nav-left">
+                <a href="#home" class="logo-link">
+                    <div class="logo-ring-box">
+                        <img src="./Images/pmk logo 2.png" alt="PMK Ring Logo">
+                    </div>
+                </a>
+            </div>
+
+            <!-- 2. CENTER: PMK Main Logo (Text) -->
+            <div class="nav-section nav-center">
+                <a href="#home" class="logo-text-link">
+                    <img src="./Images/PMK Logo.png" alt="PMK Main Logo" class="pmk-main-logo">
+                </a>
+            </div>
+
+            <!-- 3. RIGHT: Menu Trigger -->
+            <div class="nav-section nav-right">
+                <button class="menu-trigger" id="menuToggle" aria-label="Toggle Menu">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Hidden Slide-Down Menu -->
+        <div class="nav-dropdown" id="navDropdown">
+            <div class="container py-4">
+                <ul class="dropdown-list list-unstyled m-0">
+                    <li><a href="#home" class="drop-link"><i class="fas fa-home me-3"></i>முகப்பு (Home)</a></li>
+                    <li><a href="#leader" class="drop-link"><i class="fas fa-user-tie me-3"></i>தலைவர் (Leader)</a></li>
+                    <li><a href="#about" class="drop-link"><i class="fas fa-info-circle me-3"></i>எங்களைப் பற்றி (About)</a></li>
+                    <li><a href="#gallery" class="drop-link"><i class="fas fa-images me-3"></i>புகைப்படங்கள் (Gallery)</a></li>
+                    <li><a href="#thoguthi" class="drop-link"><i class="fas fa-map-marker-alt me-3"></i>தொகுதி (Constituency)</a></li>
+                    <li><a href="#contact" class="drop-link"><i class="fas fa-envelope me-3"></i>தொடர்புக்கு (Contact)</a></li>
+                    <li class="border-top border-white border-opacity-10 my-3"></li>
+                    <li><a href="intranet.html" class="drop-link text-warning"><i class="fas fa-vanguard me-3"></i>Admin Panel</a></li>
+                    <li><a href="membership.html" class="btn btn-warning rounded-pill w-100 mt-3 fw-bold py-3 shadow">இப்போதே இணையுங்கள் (Join Now)</a></li>
                 </ul>
             </div>
         </div>
@@ -80,18 +89,21 @@
             <!-- Carousel Items -->
             <div class="carousel-inner h-100">
                 <div class="carousel-item active h-100">
-                    <div class="carousel-img h-100" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('Images/5.jpg');"></div>
+                    <div class="carousel-img h-100" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('Images/5.jpg');"></div>
                     <div class="carousel-caption d-flex flex-column justify-content-center h-100 text-center text-lg-start">
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-8" data-aos="fade-up">
-                                    <div class="hero-card border-0 p-0 bg-transparent text-center text-lg-start">
-                                        <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill fw-bold floating-badge">முன்னேற்றம் மற்றும் வளர்ச்சி</span>
-                                        <h1 class="display-2 fw-bold mb-4 text-white">பாமக பவானி <br><span class="text-warning">தொகுதி</span></h1>
-                                        <p class="lead mb-5 opacity-75 fs-4">பவானி தொகுதியின் வளர்ச்சிக்கும், மக்களின் முன்னேற்றத்திற்கும் அர்ப்பணிக்கப்பட்டது. நீங்களும் எங்களோடு இணையுங்கள்.</p>
+                                <div class="col-lg-10 col-xl-8" data-aos="zoom-out-up">
+                                    <div class="hero-card text-center text-lg-start">
+                                        <div class="d-inline-flex align-items-center bg-white bg-opacity-10 backdrop-blur rounded-pill px-3 py-2 mb-4 border border-white border-opacity-25 shadow-sm">
+                                            <span class="badge bg-warning text-dark me-2 rounded-circle px-2 py-2"><i class="fas fa-bolt"></i></span>
+                                            <span class="text-white small fw-bold text-uppercase" style="letter-spacing: 1px;">முன்னேற்றம் மற்றும் வளர்ச்சி</span>
+                                        </div>
+                                        <h1 class="display-1 fw-extrabold mb-4 text-white lh-1">பாமக <span class="text-warning">பவானி</span> <br><span style="background: linear-gradient(to right, #FFD700, #FF0000); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">தொகுதி</span></h1>
+                                        <p class="lead mb-5 text-white opacity-75 fs-4 fw-light">பவானி தொகுதியின் வளர்ச்சிக்கும், மக்களின் முன்னேற்றத்திற்கும் அர்ப்பணிக்கப்பட்டது. நீங்களும் எங்களோடு இணையுங்கள்.</p>
                                         <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
-                                            <a href="#about" class="btn btn-warning btn-lg rounded-pill px-5 text-dark fw-bold shadow-lg">மேலும் அறிய</a>
-                                            <a href="membership.html" class="btn btn-outline-light btn-lg rounded-pill px-5 shadow-sm">இப்போதே இணையுங்கள்</a>
+                                            <a href="#about" class="btn btn-warning btn-lg rounded-pill px-5 text-dark fw-bold shadow-lg border-2 border-warning hvr-grow">மேலும் அறிய</a>
+                                            <a href="membership.html" class="btn btn-outline-light btn-lg rounded-pill px-5 shadow-sm border-2 hvr-grow">இப்போதே இணையுங்கள்</a>
                                         </div>
                                     </div>
                                 </div>
@@ -100,17 +112,20 @@
                     </div>
                 </div>
                 <div class="carousel-item h-100">
-                    <div class="carousel-img h-100" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('./Images/6.jpg');"></div>
+                    <div class="carousel-img h-100" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('./Images/6.jpg');"></div>
                     <div class="carousel-caption d-flex flex-column justify-content-center h-100 text-center text-lg-start">
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-8" data-aos="fade-up">
-                                    <div class="hero-card border-0 p-0 bg-transparent text-center text-lg-start">
-                                        <span class="badge bg-success text-white mb-3 px-3 py-2 rounded-pill fw-bold floating-badge">மக்களின் குரல்</span>
-                                        <h2 class="display-2 fw-bold mb-4 text-white">மக்களுக்காக <br><span class="text-warning">மக்கள் பணி</span></h2>
-                                        <p class="lead mb-5 opacity-75 fs-4">சாதாரண குடிமகனுக்கான சேவை மற்றும் அர்ப்பணிப்பே எங்கள் தலைமையின் அடையாளம்.</p>
+                                <div class="col-lg-10 col-xl-8" data-aos="zoom-out-up">
+                                    <div class="hero-card text-center text-lg-start">
+                                        <div class="d-inline-flex align-items-center bg-white bg-opacity-10 backdrop-blur rounded-pill px-3 py-2 mb-4 border border-white border-opacity-25 shadow-sm">
+                                            <span class="badge bg-success text-white me-2 rounded-circle px-2 py-2"><i class="fas fa-heart"></i></span>
+                                            <span class="text-white small fw-bold text-uppercase" style="letter-spacing: 1px;">மக்களின் குரல்</span>
+                                        </div>
+                                        <h2 class="display-1 fw-extrabold mb-4 text-white lh-1">மக்களுக்காக <br><span class="text-warning">மக்கள் பணி</span></h2>
+                                        <p class="lead mb-5 text-white opacity-75 fs-4 fw-light">சாதாரண குடிமகனுக்கான சேவை மற்றும் அர்ப்பணிப்பே எங்கள் தலைமையின் அடையாளம்.</p>
                                         <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
-                                            <a href="#leader" class="btn btn-warning btn-lg rounded-pill px-5 text-dark fw-bold shadow-lg">தலைவரின் விவரத்தைக் காண்க</a>
+                                            <a href="#leader" class="btn btn-warning btn-lg rounded-pill px-5 text-dark fw-bold shadow-lg hvr-grow">தலைவரின் விவரம்</a>
                                         </div>
                                     </div>
                                 </div>
@@ -119,17 +134,20 @@
                     </div>
                 </div>
                 <div class="carousel-item h-100">
-                    <div class="carousel-img h-100" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('./Images/10.jpg');"></div>
+                    <div class="carousel-img h-100" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('./Images/10.jpg');"></div>
                     <div class="carousel-caption d-flex flex-column justify-content-center h-100 text-center text-lg-start">
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-8" data-aos="fade-up">
-                                    <div class="hero-card border-0 p-0 bg-transparent text-center text-lg-start">
-                                        <span class="badge bg-light text-dark mb-3 px-3 py-2 rounded-pill fw-bold floating-badge">விவசாயத்திற்கு முன்னுரிமை</span>
-                                        <h2 class="display-2 fw-bold mb-4 text-white">பசுமை <br><span class="text-warning">பவானி</span></h2>
-                                        <p class="lead mb-5 opacity-75 fs-4">நமது விவசாயிகளுக்கும் விவசாய பாரம்பரியத்திற்கும் நிலையான வளர்ச்சியை உறுதி செய்தல்.</p>
+                                <div class="col-lg-10 col-xl-8" data-aos="zoom-out-up">
+                                    <div class="hero-card text-center text-lg-start">
+                                        <div class="d-inline-flex align-items-center bg-white bg-opacity-10 backdrop-blur rounded-pill px-3 py-2 mb-4 border border-white border-opacity-25 shadow-sm">
+                                            <span class="badge bg-light text-dark me-2 rounded-circle px-2 py-2"><i class="fas fa-leaf"></i></span>
+                                            <span class="text-white small fw-bold text-uppercase" style="letter-spacing: 1px;">விவசாயத்திற்கு முன்னுரிமை</span>
+                                        </div>
+                                        <h2 class="display-1 fw-extrabold mb-4 text-white lh-1">பசுமை <br><span class="text-warning">பவானி</span></h2>
+                                        <p class="lead mb-5 text-white opacity-75 fs-4 fw-light">நமது விவசாயிகளுக்கும் விவசாய பாரம்பரியத்திற்கும் நிலையான வளர்ச்சியை உறுதி செய்தல்.</p>
                                         <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
-                                            <a href="#thoguthi" class="btn btn-warning btn-lg rounded-pill px-5 text-dark fw-bold shadow-lg">தொகுதி</a>
+                                            <a href="#thoguthi" class="btn btn-warning btn-lg rounded-pill px-5 text-dark fw-bold shadow-lg hvr-grow">தொகுதி</a>
                                         </div>
                                     </div>
                                 </div>
@@ -287,6 +305,59 @@
         </div>
     </section>
 
+    <!-- Our Mentors Section -->
+    <section class="mentors-section section-padding position-relative overflow-hidden">
+        <div class="mentors-bg-overlay"></div>
+        <div class="container position-relative z-2">
+            <!-- Top Badge -->
+            <div class="text-center mb-5" data-aos="fade-down">
+                <div class="mentors-title-badge d-inline-flex align-items-center bg-success border-2 border-white px-4 py-2 rounded-4 shadow-lg">
+                    <img src="./Images/pmk logo 2.png" alt="Logo" class="me-2" style="height: 30px;">
+                    <h4 class="mb-0 text-white fw-bold">எங்கள் வழிகாட்டிகள்</h4>
+                </div>
+            </div>
+
+            <!-- Mentors Grid -->
+            <div class="row align-items-end justify-content-center g-4 g-lg-5">
+                <!-- Leader 1 -->
+                <div class="col-10 col-md-3 order-2 order-md-1" data-aos="fade-right">
+                    <div class="mentor-card gold-frame mb-5 mb-md-0">
+                        <div class="mentor-img-box mentor-carousel">
+                            <img src="./Images/head2 (1).png" alt="Founder" class="active">
+                        </div>
+                        <div class="mentor-name-ribbon">
+                            <span>Devi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Leader (Center) -->
+                <div class="col-12 col-md-4 order-1 order-md-2" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="mentor-card gold-frame active mb-5 mb-md-0">
+                        <div class="mentor-img-box mentor-carousel person-tall">
+                            <img src="./Images/head1 (1).png" alt="President" class="active">
+                        </div>
+                        <div class="mentor-name-ribbon">
+                            <span>மருத்துவர் ஐயா </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leader 3 -->
+                <div class="col-10 col-md-3 order-3 order-md-3" data-aos="fade-left">
+                    <div class="mentor-card gold-frame">
+                        <div class="mentor-img-box mentor-carousel">
+                            <img src="./Images/GK Mani (1).png" alt="Advocate" class="active">
+                        </div>
+                        <div class="mentor-name-ribbon">
+                            <span>ஜி.கே.மணி அவர்கள்</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="thoguthi" class="section-padding bg-dark text-white">
         <div class="container">
             <div class="row mb-5 text-center" data-aos="fade-up">
@@ -436,13 +507,21 @@
     </section>
 
     <!-- Footer -->
-    <div style="height: 6px; background: linear-gradient(to right, #00AAEF 33.3%, #ffff02 33.3% 66.6%, #E02828 66.6%); width: 100%;"></div>
-    <footer class="bg-dark text-white pt-5 pb-4">
-        <div class="container">
+    <!-- Footer Wave Transition -->
+    <div class="footer-wave-container">
+        <svg class="footer-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <!-- <path fill="#1a1a1a" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,224C384,224,480,192,576,165.3C672,139,768,117,864,128C960,139,1056,181,1152,197.3C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path> -->
+        </svg>
+    </div>
+
+    <footer class="footer-premium bg-dark text-white pb-4">
+        <!-- Animated Tri-color Line Inside Footer -->
+        <div class="footer-pulse-line"></div>
+        <div class="container pt-5">
             <div class="row mb-5 text-center text-md-start">
                 <div class="col-md-5 mb-4 mb-md-0" data-aos="fade-up">
-                    <img src="./Images/PMK Logo.png" alt="PMK Bhavani" class="footer-logo-img mb-3">
-                    <p class="opacity-75 pe-0 pe-md-4">பவானி மக்களின் முன்னேற்றத்திற்கும், விவசாயிகளின் நலனுக்கும் எங்கள் அரசியல் பயணம் என்றும் அர்ப்பணிக்கப்பட்டுள்ளது.</p>
+                    <img src="./Images/PMK Logo.png" alt="PMK Bhavani" class="footer-logo-img mb-3" style="height: 50px;">
+                    <p class="opacity-75 pe-0 pe-md-4 small">பவானி மக்களின் முன்னேற்றத்திற்கும், விவசாயிகளின் நலனுக்கும் எங்கள் அரசியல் பயணம் என்றும் அர்ப்பணிக்கப்பட்டுள்ளது.</p>
                 </div>
                 <div class="col-md-3 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
                     <h5 class="fw-bold text-warning mb-3">பக்கங்கள்</h5>
@@ -453,15 +532,18 @@
                         <li class="mb-2"><a href="#gallery" class="text-white text-decoration-none hvr-translate-x d-inline-block"><i class="fas fa-angle-right me-2 text-warning"></i>புகைப்படங்கள்</a></li>
                         <li class="mb-2"><a href="#thoguthi" class="text-white text-decoration-none hvr-translate-x d-inline-block"><i class="fas fa-angle-right me-2 text-warning"></i>தொகுதி</a></li>
                         <li><a href="#contact" class="text-white text-decoration-none hvr-translate-x d-inline-block"><i class="fas fa-angle-right me-2 text-warning"></i>தொடர்புக்கு</a></li>
+                        <li><a href="intranet.html" class="text-white text-decoration-none hvr-translate-x d-inline-block"><i class="fas fa-angle-right me-2 text-warning"></i>Admin</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 text-center text-md-end" data-aos="fade-up" data-aos-delay="200">
                     <h5 class="fw-bold text-warning mb-4">எங்களை தொடர</h5>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/arumugam.pv.5/" class="btn btn-outline-light btn-lg rounded-circle me-2 hvr-float"><i class="fab fa-facebook-f"></i></a>
-                        <!-- <a href="#" class="btn btn-outline-light btn-lg rounded-circle me-2 hvr-float"><i class="fab fa-twitter"></i></a> -->
-                        <a href="https://www.instagram.com/_erode_arumugam_?igsh=Y3V0enNrcG9sYW8=" class="btn btn-outline-light btn-lg rounded-circle me-2 hvr-float"><i class="fab fa-instagram"></i></a>
-                        <!-- <a href="#" class="btn btn-outline-light btn-lg rounded-circle hvr-float"><i class="fab fa-whatsapp"></i></a> -->
+                    <div class="social-links-premium">
+                        <a href="https://www.facebook.com/arumugam.pv.5/" class="social-btn sb-facebook" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/_erode_arumugam_?igsh=Y3V0enNrcG9sYW8=" class="social-btn sb-instagram" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -470,9 +552,9 @@
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                     <p class="mb-0 opacity-50 small">&copy; 2026 PMK Bhavani. All Rights Reserved.</p>
                 </div>
-                <div class="col-md-6 text-center text-md-end">
+                <!-- <div class="col-md-6 text-center text-md-end">
                     <p class="mb-0 opacity-50 small">Designed & Developed By <a href="https://cloudhawk.in/" class="text-warning text-decoration-none fw-bold">CloudHawk</a></p>
-                </div>
+                </div> -->
             </div>
         </div>
     </footer>

@@ -9,13 +9,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     });
 
-    // 2. Navbar Scroll Effect
-    const nav = document.getElementById('main-nav');
+    // 2. Custom Navigation Logic
+    const menuToggle = document.getElementById('menuToggle');
+    const navDropdown = document.getElementById('navDropdown');
+    const politicalNav = document.querySelector('.political-nav');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navDropdown.classList.toggle('active');
+        });
+    }
+
+    // Scroll Handling for Navbar
     window.addEventListener('scroll', () => {
+        if (!politicalNav) return;
         if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
+            politicalNav.classList.add('scrolled');
         } else {
-            nav.classList.remove('scrolled');
+            politicalNav.classList.remove('scrolled');
         }
     });
 
@@ -36,16 +48,56 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 // Close mobile menu if open
-                const navCollapse = document.getElementById('navbarNav');
-                if (navCollapse.classList.contains('show')) {
-                    const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
-                    bsCollapse.hide();
+                if (navDropdown && navDropdown.classList.contains('active')) {
+                    menuToggle.classList.remove('active');
+                    navDropdown.classList.remove('active');
                 }
             }
         });
     });
 
-    // 5. Scroll to Top Visibility
+    // 6. Mentor Image Carousel (Automatic Rotation)
+    const mentorCarousels = document.querySelectorAll('.mentor-carousel');
+    mentorCarousels.forEach(carousel => {
+        const images = JSON.parse(carousel.dataset.images);
+        let currentIndex = 0;
+        
+        setInterval(() => {
+            // Create a temporary image for crossfade
+            const nextIndex = (currentIndex + 1) % images.length;
+            const nextImg = document.createElement('img');
+            nextImg.src = images[nextIndex];
+            nextImg.className = 'next-img';
+            nextImg.style.opacity = '0';
+            nextImg.style.position = 'absolute';
+            nextImg.style.top = '0';
+            nextImg.style.left = '0';
+            nextImg.style.width = '100%';
+            nextImg.style.height = '100%';
+            nextImg.style.objectFit = 'cover';
+            nextImg.style.transition = 'opacity 1s ease-in-out';
+            
+            carousel.appendChild(nextImg);
+            
+            // Trigger Fade
+            setTimeout(() => {
+                nextImg.style.opacity = '1';
+                const currentImg = carousel.querySelector('img.active');
+                if (currentImg) currentImg.style.opacity = '0';
+                
+                // Cleanup after transition
+                setTimeout(() => {
+                    if (currentImg) currentImg.remove();
+                    nextImg.classList.add('active');
+                    nextImg.classList.remove('next-img');
+                    currentIndex = nextIndex;
+                }, 1000);
+            }, 50);
+            
+        }, 4000 + Math.random() * 2000); // Random offset for organic feel
+    });
+
+    // 7. Scroll to Top Visibility
     const scrollTopBtn = document.getElementById('scrollTop');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 500) {
@@ -72,13 +124,18 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Get Form Data
-        const name = document.getElementById('userName').value;
-        const phone = document.getElementById('userPhone').value;
-        const area = document.getElementById('userArea').value;
-        const ward = document.getElementById('userWard').value;
-        const subject = document.getElementById('userSubject').value;
-        const message = document.getElementById('userMessage').value;
+        // Save to LocalStorage (Intranet Connection)
+        const queries = JSON.parse(localStorage.getItem('pmk_queries') || '[]');
+        queries.push({
+            name: name,
+            phone: phone,
+            area: area,
+            ward: ward,
+            subject: subject,
+            message: message,
+            timestamp: new Date().toLocaleString('ta-IN')
+        });
+        localStorage.setItem('pmk_queries', JSON.stringify(queries));
 
         // Construct WhatsApp Message
         const wpNumber = "918877889595"; // Replaced with placeholder match from sidebar

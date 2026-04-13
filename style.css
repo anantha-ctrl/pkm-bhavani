@@ -21,6 +21,239 @@ body {
     background-color: #fff;
 }
 
+/* Footer Premium Enhancements */
+.footer-pulse-line {
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(90deg, #00AAEF, #E02828, #ffff02, #E02828, #00AAEF);
+    background-size: 300% 100%;
+    animation: footerPulse 6s linear infinite;
+}
+
+@keyframes footerPulse {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.footer-wave-container {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+    margin-top: -100px; /* Overlap to blend */
+    z-index: 1;
+}
+
+.footer-wave {
+    width: 100%;
+    height: 120px;
+}
+
+.footer-premium {
+    background: #1a1a1a !important; /* Rich Dark */
+    position: relative;
+    z-index: 2;
+}
+
+.social-links-premium {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .social-links-premium { justify-content: flex-end; }
+}
+
+.social-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    z-index: -1;
+    opacity: 0;
+}
+
+.social-btn:hover::before {
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    opacity: 1;
+}
+
+.social-btn:hover {
+    transform: translateY(-8px) scale(1.1);
+    border-color: transparent;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.sb-facebook:hover::before { background: #1877F2; }
+.sb-instagram:hover::before { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+
+.footer-premium a.text-white:hover {
+    color: var(--secondary-color) !important;
+    padding-left: 5px;
+    transition: 0.3s ease;
+}
+
+/* Contact Section Padding Fix */
+#contact {
+    padding-bottom: 200px !important; /* Extra space for the footer wave overlap */
+}
+
+/* Back to Top Enhancement */
+
+/* Mentors Section - Luxury Political Style */
+.mentors-section {
+    background: #f8f9fa;
+    padding: 100px 0;
+}
+
+.mentors-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.mentors-title-badge {
+    box-shadow: 0 10px 30px rgba(40, 167, 69, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.gold-frame {
+    position: relative;
+    border: 8px solid #d4af37; /* Base Gold */
+    padding: 5px;
+    background: #fff;
+    box-shadow: 
+        0 0 0 4px #faf3e0, /* Cream gap */
+        0 0 0 8px #b8860b, /* Darker Gold border */
+        0 15px 35px rgba(0,0,0,0.2);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mentor-card {
+    border-radius: 4px; /* Traditional sharp corner look with slight rounding */
+    margin-bottom: 40px;
+}
+
+.mentor-img-box {
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    position: relative;
+}
+
+.mentor-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0.2) contrast(1.1); /* Slight heritage look */
+    transition: transform 0.6s ease;
+}
+
+.mentor-card:hover .mentor-img-box img {
+    transform: scale(1.05);
+}
+
+/* Central Active Leader Card - Natural Sizing */
+.mentor-card.active {
+    z-index: 10;
+    box-shadow: 
+        0 0 0 4px #faf3e0,
+        0 0 0 8px #d4af37,
+        0 20px 50px rgba(184, 134, 11, 0.4);
+}
+
+.mentor-img-box.person-tall {
+    aspect-ratio: 4/6 !important; /* Naturally taller for main leader */
+}
+
+/* Ensure no clipping */
+.mentors-section .row {
+    padding-bottom: 30px;
+}
+
+
+/* Ribbon Name Banner */
+.mentor-name-ribbon {
+    position: absolute;
+    bottom: -20px;
+    left: -15px;
+    right: -15px;
+    background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+    color: #fff;
+    padding: 10px 5px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 4px;
+    z-index: 5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Ribbon decorative edges */
+.mentor-name-ribbon::before,
+.mentor-name-ribbon::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    border-style: solid;
+    border-width: 0 10px 10px 0;
+    border-color: transparent #8b6508 transparent transparent;
+}
+
+.mentor-name-ribbon::before { left: 0; }
+.mentor-name-ribbon::after { right: 0; transform: scaleX(-1); }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .mentor-card.active {
+        transform: scale(1.05);
+        margin: 20px 0;
+    }
+    .mentor-name-ribbon {
+        font-size: 0.9rem;
+        bottom: -15px;
+    }
+}
+
+/* Infinite Smooth Spin Animation */
+.spin-slow {
+    animation: rotateInfinite 8s linear infinite;
+}
+
+@keyframes rotateInfinite {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
 /* Typography Enhancements */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
@@ -51,72 +284,166 @@ h1, h2, h3, h4, h5, h6 {
     transition: opacity 0.5s ease;
 }
 
-/* Navbar Styling */
-#main-nav {
-    transition: var(--transition-smooth);
-    padding: 20px 0;
-    background: transparent; /* Transparent by default for hero blend */
-}
-
-#main-nav.scrolled {
-    padding: 12px 0;
+/* Political Custom Navbar (Flexbox Only - No Absolute Centering) */
+.political-nav {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
+    transition: var(--transition-smooth);
+    z-index: 1050;
+    padding: 10px 0;
 }
 
-.navbar-brand {
-    font-size: 1.4rem;
-    font-weight: 800;
+.political-nav.scrolled {
+    padding: 5px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
 }
 
-.logo-box {
-    width: 40px;
-    height: 40px;
+.nav-belt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-section {
+    flex: 1; /* Key to perfect centering: all 3 sections share width */
+    display: flex;
+    align-items: center;
+}
+
+.nav-left { justify-content: flex-start; }
+.nav-center { justify-content: center; }
+.nav-right { justify-content: flex-end; }
+
+/* Desktop Sizing (Default) */
+.logo-ring-box {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border: 3px solid #e02828;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 0; /* Removed padding to let logo fill ring properly */
+    box-shadow: 0 0 0 2px #ffff01, 0 0 0 4px #00AAEF;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.logo-ring-box img {
+    width: 85%; /* Slightly smaller than ring for breathing room */
+    height: 85%;
+    object-fit: contain;
+}
+
+.pmk-main-logo {
+    height: 65px;
+    object-fit: contain;
+}
+
+.menu-trigger {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
+}
+
+#main-nav.scrolled .menu-trigger {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu-trigger:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+#main-nav.scrolled .menu-trigger:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.hamburger {
+    width: 28px;
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    border-radius: 3px;
+    transition: all 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+/* Individual colors for hamburger lines based on party flag */
+.hamburger span:nth-child(1) { background: #00AAEF; } /* Blue */
+.hamburger span:nth-child(2) { background: #ffff01; } /* Yellow */
+.hamburger span:nth-child(3) { background: #E02828; } /* Red */
+
+.menu-trigger.active {
+    background: var(--dark-color) !important;
+}
+
+.menu-trigger.active .hamburger span {
+    background: #fff !important;
+}
+
+/* Tablet view (768px – 1024px) */
+@media (max-width: 1024px) {
+    .logo-ring-box { width: 50px; height: 50px; }
+    .pmk-main-logo { height: 50px; }
+    .political-nav { padding: 8px 0; }
+}
+
+/* Mobile view (max-width: 768px) */
+@media (max-width: 768px) {
+    .logo-ring-box { width: 42px; height: 42px; padding: 2px; }
+    .pmk-main-logo { height: 38px; }
+    .hamburger { width: 28px; height: 20px; }
+    .political-nav { padding: 5px 0; }
+}
+
+/* Dropdown Menu Styling */
+.nav-dropdown {
+    background: var(--dark-color);
+    max-height: 0;
     overflow: hidden;
-    border-radius: 50%;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: max-height 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.logo-box img {
-    max-width: 90%;
-    object-fit: contain;
+.nav-dropdown.active {
+    max-height: 100vh;
 }
 
-/* PMK Custom Logo Frames */
-.pmk-logo-ring {
-    width: 70px; /* Slimmed down for a sleeker look */
-    height: 70px;
-    border: 4px solid #E02828;
-    box-shadow: 0 0 0 3px #ffff01, 0 0 0 8px #00AAEF;
+.drop-link {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 15px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: 0.3s;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-.pmk-text-logo {
-    height: 60px;
-    max-width: 320px;
-    width: auto;
-    object-fit: contain;
+.drop-link:hover {
+    color: var(--secondary-color);
+    padding-left: 10px;
+}
+
+.menu-trigger.active .hamburger span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+.menu-trigger.active .hamburger span:nth-child(2) { opacity: 0; }
+.menu-trigger.active .hamburger span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
+
+/* Logo glow on transparent navbar */
+.political-nav:not(.scrolled) .pmk-main-logo {
     filter: drop-shadow(0 0 10px rgba(255,255,255,0.4));
-    transition: var(--transition-smooth);
-}
-
-@media (max-width: 991px) {
-    .pmk-text-logo {
-        display: none !important; /* Hide on mobile to prevent clipping/overflow */
-    }
-    .pmk-logo-ring {
-        width: 50px !important;
-        height: 50px !important;
-        box-shadow: 0 0 0 2px #ffff01, 0 0 0 5px #00AAEF !important;
-    }
-}
-
-#main-nav.scrolled .pmk-text-logo {
-    filter: none; /* Remove glow on solid white background */
 }
 
 .footer-logo-img {
@@ -180,7 +507,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .carousel-item.active .carousel-img {
-    transform: scale(1.1);
+    animation: kenburns 20s linear infinite;
+}
+
+@keyframes kenburns {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+
+.hero-glass-card {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 50px;
+    border-radius: 40px;
+    display: inline-block;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
 .carousel-caption h1, .carousel-caption h2 {
