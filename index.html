@@ -90,22 +90,22 @@
             <!-- Carousel Items -->
             <div class="carousel-inner h-100">
                 <div class="carousel-item active h-100">
-                    <div class="carousel-img h-100" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('./Images/head1 (1).png');"></div>
+                    <div class="carousel-img h-100" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('./Images/head1.0.png');"></div>
                     <div class="carousel-caption d-flex flex-column justify-content-center h-100 text-center text-lg-start">
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-10 col-xl-8" data-aos="zoom-out-up">
+                                <div class="col-lg-10 col-xl-8" data-aos="fade-up" data-aos-delay="200">
                                     <div class="hero-card text-center text-lg-start">
-                                        <div class="d-inline-flex align-items-center bg-white bg-opacity-10 backdrop-blur rounded-pill px-3 py-2 mb-4 border border-white border-opacity-25 shadow-sm">
+                                        <div class="d-inline-flex align-items-center bg-white bg-opacity-10 backdrop-blur rounded-pill px-3 py-2 mb-4 border border-white border-opacity-25 shadow-sm floating-badge">
                                             <span class="badge bg-warning text-dark me-2 rounded-circle px-2 py-2"><i class="fas fa-bolt"></i></span>
-                                            <span class="text-white small fw-bold text-uppercase" style="letter-spacing: 1px;">முன்னேற்றம் மற்றும் வளர்ச்சி</span>
+                                            <span class="text-white small fw-bold text-uppercase" style="letter-spacing: 2px;">முன்னேற்றம் மற்றும் வளர்ச்சி</span>
                                         </div>
                                         <h1 class="display-1 fw-extrabold mb-4 text-white lh-1">பாமக <span class="text-warning">பவானி</span> <br><span style="background: linear-gradient(to right, #FFD700, #FF0000); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">தொகுதி</span></h1>
-                                        <p class="lead mb-5 text-white opacity-75 fs-4 fw-light">மருத்துவர் ஐயா. </p>
-                                        <!-- <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                                        <p class="lead mb-5 text-white-50 fs-3 fw-light">மருத்துவர் ஐயா அவர்களின் வழிகாட்டுதலில் <br>மக்களின் முன்னேற்றமே எமது பிரதான லட்சியம்.</p>
+                                        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
                                             <a href="#about" class="btn btn-warning btn-lg rounded-pill px-5 text-dark fw-bold shadow-lg border-2 border-warning hvr-grow">மேலும் அறிய</a>
                                             <a href="membership.html" class="btn btn-outline-light btn-lg rounded-pill px-5 shadow-sm border-2 hvr-grow">இப்போதே இணையுங்கள்</a>
-                                        </div> -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +113,7 @@
                     </div>
                 </div>
                 <!-- 1 -->
-                <div class="carousel-item active h-100">
+                <div class="carousel-item h-100">
                     <div class="carousel-img h-100" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('Images/5.jpg');"></div>
                     <div class="carousel-caption d-flex flex-column justify-content-center h-100 text-center text-lg-start">
                         <div class="container">
@@ -499,30 +499,39 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label fw-bold small text-uppercase">வார்டு எண்</label>
-                                        <input type="number" class="form-control bg-light border-0 py-3" id="ward" placeholder="வார்டு எண்" required>
+                                        <input type="text" class="form-control bg-light border-0 py-3" id="ward" placeholder="வார்டு எண்" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label fw-bold small text-uppercase">வாக்காளர் அடையாள அட்டை எண் (விருப்பத்தேர்வு)</label>
+                                        <input type="text" class="form-control bg-light border-0 py-3" id="voterId" placeholder="வாக்காளர் அடையாள அட்டை எண் (ஆப்ஷனல்)">
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label fw-bold small text-uppercase">தலைப்பு</label>
                                         <select id="subject" class="form-select bg-light border-0 py-3">
-                                            <option selected>பொதுவான கேள்வி</option>
-                                            <option>விவசாய பிரச்சனை</option>
-                                            <option>உள்கட்டமைப்பு கோரிக்கை</option>
-                                            <option>கல்வி கோரிக்கை</option>
+                                            <option selected>பொதுவான கேள்வி (General)</option>
+                                            <option>விவசாய பிரச்சனை (Agriculture)</option>
+                                            <option>உள்கட்டமைப்பு கோரிக்கை (Infrastructure)</option>
+                                            <option>கல்வி கோரிக்கை (Education)</option>
+                                            <option>மருத்துவ உதவி (Medical)</option>
+                                            <option>முதியோர் உதவித்தொகை (Pension)</option>
+                                            <option>வேலைவாய்ப்பு (Employment)</option>
                                         </select>
                                     </div>
                                     <div class="col-12">
-                                        <label class="form-label fw-bold small text-uppercase">மனு</label>
+                                        <label class="form-label fw-bold small text-uppercase">மனு (Petition)</label>
                                         <textarea class="form-control bg-light border-0 py-3" id="message" rows="4" placeholder="நாங்கள் உங்களுக்கு எவ்வாறு உதவ முடியும்?" required></textarea>
                                     </div>
                                     <div class="col-12">
                                         <button type="submit" class="btn btn-primary w-100 py-3 rounded-3 fw-bold shadow-sm hvr-grow">
-                                            செய்தி அனுப்பு <i class="fas fa-paper-plane ms-2"></i>
+                                            மனுவை சமர்ப்பிக்க <i class="fas fa-paper-plane ms-2"></i>
                                         </button>
                                     </div>
                                 </div>
                             </form>
-                            <div id="successMessage" class="alert alert-success mt-4 d-none">
-                                <i class="fas fa-check-circle me-2"></i> நன்றி! உங்கள் செய்தி வெற்றிகரமாக அனுப்பப்பட்டது.
+                            <div id="successMessage" class="alert alert-success border-0 shadow-lg mt-4 d-none p-4 rounded-4 text-center hvr-float" style="background: linear-gradient(135deg, #dcfce7 0%, #f0fdf4 100%);">
+                                <div class="mb-2"><i class="fas fa-check-circle fa-3x text-success"></i></div>
+                                <h5 class="fw-bold text-success mb-1">நன்றி!</h5>
+                                <p class="mb-0 text-success-emphasis opacity-75">உங்கள் மனு வெற்றிகரமாகப் பெறப்பட்டது. விரைவில் அது கவனத்தில் கொள்ளப்படும்.</p>
                             </div>
                         </div>
                     </div>

@@ -161,13 +161,13 @@
                     <h5 class="modal-title fw-bold text-dark">Identity Card Preview</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body bg-light d-flex justify-content-center overflow-auto pb-4">
+                <div class="modal-body bg-light modal-body-preview pb-4">
                     <div class="id-card-container">
                         <!-- PMK ID Card -->
                         <div id="cardFront" class="id-card">
                             <div class="card-header-v">
                                 <img src="./Images/pmk logo 2.png" class="header-logo" alt="Logo">
-                                <h2>பாட்டாளி மக்கள் கட்சி</h2>
+                                <img src="./Images/PMK Logo.png" class="header-logo" alt="பாட்டாளி மக்கள் கட்சி">
                             </div>
                             
                             <div class="card-body-v">
@@ -177,7 +177,7 @@
                                 <!-- Left Section -->
                                 <div class="left-col">
                                     <div class="member-photo">
-                                        <img id="cardPhoto" src="./Images/pmk logo 2.png" alt="Member" style="opacity: 0.2; object-fit: contain;">
+                                        <img id="cardPhoto" src="./Images/pmk logo 2.png" alt="Member" style="opacity: 1; object-fit: cover;">
                                     </div>
                                     <div class="qr-code">
                                         <img id="cardQR" src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=PMK-BHV-000000" alt="QR" class="img-fluid">
@@ -232,10 +232,10 @@
                                 <!-- Right Section (Leader) -->
                                 <div class="right-col">
                                     <img src="./Images/pmk head.png" class="leader-portrait" alt="Leader">
-                                    <div class="signature-box">
-                                        <div style="height: 40px;"></div> <!-- Placeholder for signature -->
+                                    <!-- <div class="signature-box">
+                                        <div style="height: 40px;"></div> 
                                         <p>தலைவர்</p>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 

@@ -147,19 +147,18 @@ body {
 
 .gold-frame {
     position: relative;
-    border: 8px solid #d4af37; /* Base Gold */
+    border: 8px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(to right, #00AAEF, #ffff01, #E02828) border-box;
+    border-radius: 12px;
     padding: 5px;
-    background: #fff;
-    box-shadow: 
-        0 0 0 4px #faf3e0, /* Cream gap */
-        0 0 0 8px #b8860b, /* Darker Gold border */
-        0 15px 35px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .mentor-card {
-    border-radius: 4px; /* Traditional sharp corner look with slight rounding */
-    margin-bottom: 40px;
+    border-radius: 12px;
+    margin-bottom: 60px; /* Increased bottom margin for ribbons */
 }
 
 .mentor-img-box {
@@ -181,12 +180,11 @@ body {
 }
 
 /* Central Active Leader Card - Natural Sizing */
-.mentor-card.active {
-    z-index: 10;
+.mentor-card.active .gold-frame {
     box-shadow: 
-        0 0 0 4px #faf3e0,
-        0 0 0 8px #d4af37,
-        0 20px 50px rgba(184, 134, 11, 0.4);
+        0 0 0 4px rgba(255,255,255,0.8),
+        0 25px 60px rgba(0, 170, 239, 0.3);
+    transform: scale(1.02);
 }
 
 .mentor-img-box.person-tall {
@@ -202,35 +200,24 @@ body {
 /* Ribbon Name Banner */
 .mentor-name-ribbon {
     position: absolute;
-    bottom: -20px;
-    left: -15px;
-    right: -15px;
-    background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+    bottom: -25px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #cc9900 0%, #997700 100%);
     color: #fff;
-    padding: 10px 5px;
+    padding: 12px 5px;
     text-align: center;
     font-weight: 800;
-    font-size: 1.1rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    border-radius: 4px;
+    font-size: 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    border-radius: 8px;
     z-index: 5;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 /* Ribbon decorative edges */
-.mentor-name-ribbon::before,
-.mentor-name-ribbon::after {
-    content: '';
-    position: absolute;
-    bottom: 100%;
-    border-style: solid;
-    border-width: 0 10px 10px 0;
-    border-color: transparent #8b6508 transparent transparent;
-}
-
-.mentor-name-ribbon::before { left: 0; }
-.mentor-name-ribbon::after { right: 0; transform: scaleX(-1); }
+/* Removed ribbon edges for better alignment */
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -336,8 +323,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pmk-main-logo {
-    height: 65px;
+    height: 55px;
+    width: auto;
     object-fit: contain;
+    display: block;
+    margin: 0 auto;
 }
 
 .menu-trigger {
@@ -827,8 +817,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hvr-zoom { transition: var(--transition-smooth); }
+.hvr-grow { transition: var(--transition-smooth); }
 .gallery-item:hover .hvr-zoom {
     transform: scale(1.15) rotate(2deg);
+}
+.hvr-grow:hover {
+    transform: scale(1.05);
 }
 
 .gallery-overlay span {

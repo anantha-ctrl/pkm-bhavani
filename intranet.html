@@ -37,12 +37,32 @@
             z-index: 1000;
             transition: var(--transition);
             box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+            overflow-y: auto; /* Allow scrolling if content is too tall */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
         }
 
         .sidebar-header {
             padding: 2rem 1.5rem;
             text-align: center;
             border-bottom: 1px solid rgba(255,255,255,0.05);
+            flex-shrink: 0; /* Header stays at top */
+        }
+
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            flex: 1; /* Take remaining space to allow mt-auto work */
+            padding-bottom: 2rem;
         }
 
         .sidebar-logo {
@@ -208,8 +228,26 @@
         @media (max-width: 991px) {
             .sidebar { transform: translateX(-100%); }
             .sidebar.active { transform: translateX(0); }
-            .main-content { margin-left: 0; padding: 1rem; }
-            .sidebar-toggle { display: block !important; }
+            .main-content { margin-left: 0; padding: 1rem; padding-top: 5rem !important; }
+            .sidebar-toggle { display: flex !important; }
+            
+            .table {
+                min-width: 700px; /* Ensure horizontal scroll on mobile */
+            }
+            
+            .stat-card h2 {
+                font-size: 1.8rem !important;
+            }
+
+            .search-box {
+                width: 100% !important;
+                margin-bottom: 20px;
+            }
+            
+            .voter-id-tag {
+                font-size: 0.7rem;
+                padding: 3px 6px;
+            }
         }
 
         .sidebar-toggle {
@@ -217,22 +255,31 @@
             position: fixed;
             top: 20px;
             left: 20px;
-            z-index: 1100;
+            z-index: 1200;
             background: var(--dark-sidebar);
             color: #fff;
             border: none;
-            border-radius: 10px;
-            padding: 10px 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border-radius: 14px;
+            width: 50px;
+            height: 50px;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            transition: var(--transition);
+        }
+
+        .sidebar-toggle:active {
+            transform: scale(0.9);
         }
 
         .btn-back {
             background: #fff;
             color: var(--dark-sidebar);
             border: 1px solid #e2e8f0;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 12px;
             font-weight: 600;
+            font-size: 0.85rem;
             transition: var(--transition);
         }
 
@@ -251,30 +298,38 @@
 
     <!-- Sidebar -->
     <aside class="sidebar">
-        <div class="sidebar-header">
-            <img src="./Images/pmk logo 2.png" alt="PMK Logo" class="sidebar-logo mb-3">
-            <h5 class="text-white fw-bold mb-0">நிர்வாக மேலாண்மை</h5>
-            <p class="text-muted small">PMK BHAVANI PANEL</p>
+        <div class="sidebar-header text-center">
+            <div class="logo-glow mb-3">
+                <img src="./Images/pmk logo 2.png" alt="PMK Logo" class="sidebar-logo" style="width: 70px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));">
+            </div>
+            <h5 class="text-white fw-bold mb-1">நிர்வாக மேலாண்மை</h5>
+            <p class="text-white-50 small mb-0 opacity-75">BHAVANI CONSTITUENCY</p>
+            <div class="badge bg-warning text-dark mt-2 small fw-bold px-3">OFFICIAL PANEL</div>
         </div>
         <nav class="mt-4">
+            <!-- <div class="sidebar-id mt-2 mb-4 px-3 py-2 bg-black bg-opacity-25 rounded-3">
+                <span class="text-white-50 x-small fw-bold">ADMIN ID: PMK-BHA-26</span>
+            </div> -->
+
             <a href="#" class="nav-link active" data-section="overview" onclick="showSection('overview')">
-                <i class="fas fa-th-large"></i> மேலோட்டம் (Overview)
+                <i class="fas fa-chart-line"></i> மேலோட்டம் (Overview)
             </a>
             <a href="#" class="nav-link" data-section="members" onclick="showSection('members')">
-                <i class="fas fa-user-friends"></i> உறுப்பினர்கள்
+                <i class="fas fa-users"></i> உறுப்பினர்கள் (Members)
             </a>
             <a href="#" class="nav-link" data-section="queries" onclick="showSection('queries')">
-                <i class="fas fa-comment-alt"></i> கோரிக்கைகள்
+                <i class="fas fa-inbox"></i> கோரிக்கைகள் (Queries)
             </a>
-            <div class="border-top border-secondary mx-3 my-4 opacity-25"></div>
+            
+            <div class="sidebar-label mt-4">ACTIONS</div>
             <a href="index.html" class="nav-link">
-                <i class="fas fa-globe"></i> இணையதளம் செல்க
+                <i class="fas fa-external-link-alt"></i> இணையதளம் செல்க
             </a>
-            <a href="#" class="nav-link text-warning" onclick="doLogout()">
-                <i class="fas fa-sign-out-alt"></i> வெளியேறு (Logout)
+            <a href="#" class="nav-link text-warning mt-auto" onclick="doLogout()">
+                <i class="fas fa-power-off"></i> வெளியேறு (Logout)
             </a>
-            <a href="#" class="nav-link text-danger mt-auto" onclick="clearData()">
-                <i class="fas fa-trash-alt"></i> தரவை நீக்கு
+            <a href="#" class="nav-link text-danger border-top border-secondary pt-3 mt-2" onclick="clearData()" style="border-color: rgba(255,255,255,0.05) !important;">
+                <i class="fas fa-trash-alt"></i> தரவை நீக்கு (Clear All)
             </a>
         </nav>
     </aside>
@@ -294,7 +349,9 @@
             <button class="btn btn-export w-100 py-3 mb-3" onclick="doLogin()" style="border-radius: 12px;">
                 உள்நுழை (Login) <i class="fas fa-sign-in-alt ms-2"></i>
             </button>
-            <a href="index.html" class="text-decoration-none small text-muted">முகப்புப்பக்கத்திற்குச் செல்க</a>
+            <a href="index.html" class="btn btn-back w-100 py-3" style="border-radius: 12px;">
+                <i class="fas fa-arrow-left me-2"></i> முகப்பு செல்க (Back)
+            </a>
         </div>
     </div>
 
@@ -317,9 +374,14 @@
                         <i class="fas fa-search text-muted"></i>
                         <input type="text" placeholder="தேடுக (Search)..." id="globalSearch" onkeyup="filterData()">
                     </div>
-                    <button class="btn btn-export flex-grow-1 flex-md-grow-0" onclick="exportToCSV()">
-                        <i class="fas fa-file-csv me-2"></i> CSV பதிவிறக்கம்
-                    </button>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-back border" onclick="exportToCSV('queries')">
+                            <i class="fas fa-file-export me-2"></i> Export Queries
+                        </button>
+                        <button class="btn btn-export" onclick="exportToCSV('members')">
+                            <i class="fas fa-file-export me-2"></i> Export Members
+                        </button>
+                    </div>
                     <button class="btn btn-light rounded-circle shadow-sm" onclick="loadData()"><i class="fas fa-sync-alt"></i></button>
                 </div>
             </div>
@@ -396,6 +458,7 @@
                         <thead>
                             <tr>
                                 <th class="ps-4">பெயர் / ஊர்</th>
+                                <th>வாக்காளர் ID</th>
                                 <th>வகைப்பாடு</th>
                                 <th>செய்தி விவரம்</th>
                                 <th>வார்டு</th>
@@ -541,8 +604,9 @@
                             <div class="fw-bold">${q.name}</div>
                             <div class="small text-muted">${q.area}</div>
                         </td>
+                        <td><span class="voter-id-tag">${q.voterId || '---'}</span></td>
                         <td><span class="badge rounded-pill bg-light text-dark border">${q.subject}</span></td>
-                        <td><div class="small text-truncate" style="max-width: 250px;" title="${q.message}">${q.message}</div></td>
+                        <td><div class="small text-truncate" style="max-width: 200px;" title="${q.message}">${q.message}</div></td>
                         <td><span class="fw-bold">W: ${q.ward}</span></td>
                         <td class="text-end pe-4 small text-muted">${q.timestamp}</td>
                     </tr>
@@ -573,21 +637,35 @@
             }
         }
 
-        function exportToCSV() {
-            const members = JSON.parse(localStorage.getItem('pmk_members_data') || '[]');
-            if(members.length === 0) return alert("ஏற்றுமதி செய்ய தரவு இல்லை!");
+        function exportToCSV(type) {
+            if (type === 'members') {
+                const members = JSON.parse(localStorage.getItem('pmk_members_data') || '[]');
+                if(members.length === 0) return alert("ஏற்றுமதி செய்ய தரவு இல்லை!");
 
-            let csv = "Name,Phone,VoterID,District,Ward,Timestamp\n";
-            members.forEach(m => {
-                csv += `"${m.name}","${m.phone}","${m.voterID}","${m.district}","${m.ward}","${m.timestamp}"\n`;
-            });
+                let csv = "Name,Phone,VoterID,District,Ward,Timestamp\n";
+                members.forEach(m => {
+                    csv += `"${m.name}","${m.phone}","${m.voterID}","${m.district}","${m.ward}","${m.timestamp}"\n`;
+                });
+                triggerDownload(csv, `PMK_Bhavani_Members_${new Date().toLocaleDateString()}.csv`);
+            } else {
+                const queries = JSON.parse(localStorage.getItem('pmk_queries') || '[]');
+                if(queries.length === 0) return alert("ஏற்றுமதி செய்ய தரவு இல்லை!");
 
+                let csv = "Name,Phone,Area,Ward,VoterID,Subject,Message,Timestamp\n";
+                queries.forEach(q => {
+                    csv += `"${q.name}","${q.phone}","${q.area}","${q.ward}","${q.voterId}","${q.subject}","${q.message}","${q.timestamp}"\n`;
+                });
+                triggerDownload(csv, `PMK_Bhavani_Queries_${new Date().toLocaleDateString()}.csv`);
+            }
+        }
+
+        function triggerDownload(csv, filename) {
             const blob = new Blob([csv], { type: 'text/csv' });
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.setAttribute('hidden', '');
             a.setAttribute('href', url);
-            a.setAttribute('download', `PMK_Bhavani_Members_${new Date().toLocaleDateString()}.csv`);
+            a.setAttribute('download', filename);
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);

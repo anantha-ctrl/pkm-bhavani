@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 6. Mentor Image Carousel (Automatic Rotation)
     const mentorCarousels = document.querySelectorAll('.mentor-carousel');
     mentorCarousels.forEach(carousel => {
+        if (!carousel.dataset.images) return; // Skip if no images are provided
         const images = JSON.parse(carousel.dataset.images);
         let currentIndex = 0;
         
@@ -129,17 +130,19 @@ contactForm.addEventListener('submit', (e) => {
     const phone = document.getElementById('phone').value;
     const area = document.getElementById('area').value;
     const ward = document.getElementById('ward').value;
+    const voterId = document.getElementById('voterId').value || "Not Provided";
     const subject = document.getElementById('subject').value;
     const message = document.getElementById('message').value;
 
-        // Save to LocalStorage (Intranet Connection)
-         const queries = JSON.parse(localStorage.getItem('pmk_queries') || '[]');
+    // Save to LocalStorage (Intranet Connection)
+    const queries = JSON.parse(localStorage.getItem('pmk_queries') || '[]');
 
     queries.push({
         name,
         phone,
         area,
         ward,
+        voterId,
         subject,
         message,
         timestamp: new Date().toLocaleString('ta-IN')
@@ -147,21 +150,19 @@ contactForm.addEventListener('submit', (e) => {
 
     localStorage.setItem('pmk_queries', JSON.stringify(queries));
 
-    // =========================
-    // ✅ WHATSAPP MESSAGE
-    // =========================
+    // ✅ WHATSAPP MESSAGE (Fixed Syntax)
     const wpNumber = "918877889595";
+    const rawMessage = `*PMK BHAVANI NEW QUERY*
 
-    const wpMessage =
-        `*PMK BHAVANI NEW QUERY*%0A%0A` +
-        `*Name:* ${name}%0A` +
-        `*Phone:* ${phone}%0A` +
-        `*Area:* ${area}%0A` +
-        `*Ward:* ${ward}%0A` +
-        `*Subject:* ${subject}%0A` +
-        `*Message:* ${message}`;
+*Name:* ${name}
+*Phone:* ${phone}
+*Area:* ${area}
+*Ward:* ${ward}
+*Voter ID:* ${voterId}
+*Subject:* ${subject}
+*Message:* ${message}`;
 
-    const wpLink = `https://wa.me/${wpNumber}?text=${wpMessage}`;
+    const wpLink = `https://wa.me/${wpNumber}?text=${encodeURIComponent(rawMessage)}`;
 
 
         // UI Feedback
@@ -170,29 +171,17 @@ contactForm.addEventListener('submit', (e) => {
         // btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Connecting WhatsApp...';
         // btn.disabled = true;
 
-         const btn = contactForm.querySelector('button');
-    const originalText = btn.innerHTML;
+    // Open WhatsApp immediately
+    window.open(wpLink, '_blank');
 
-    btn.innerHTML = "Sending...";
-    btn.disabled = true;
+    // UI Feedback & Reset
+    successMsg.classList.remove('d-none');
+    contactForm.reset();
+    contactForm.classList.remove('was-validated');
 
-        // Redirect to WhatsApp after a small delay
-        setTimeout(() => {
-        // WhatsApp open
-        window.open(wpLink, '_blank');
-
-        // Success UI
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-
-        successMsg.classList.remove('d-none');
-        contactForm.reset();
-        contactForm.classList.remove('was-validated');
-
-        setTimeout(() => {
-            successMsg.classList.add('d-none');
-        }, 4000);
-        }, 1000);
+    setTimeout(() => {
+        successMsg.classList.add('d-none');
+    }, 4000);
     });
 
     // Active link highlighting on scroll (using logic since Bootstrap spy can be finicky)
